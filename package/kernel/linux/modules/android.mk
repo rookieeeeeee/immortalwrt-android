@@ -1,13 +1,13 @@
 include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
-ANDROID_MENU:=Android modules
+ANDROID_MENU:=Android Drivers
 
 
 define KernelPackage/android
   SUBMENU:=$(ANDROID_MENU)
-  TITLE:=Android Support
-  KCONFIG:=CONFIG_ANDROID \
+  TITLE:=$(ANDROID_MENU)
+  KCONFIG:=CONFIG_ANDROID=y \
 	   CONFIG_ANDROID_BINDERFS=y \
 	   CONFIG_ANDROID_BINDER_IPC=y \
 	   CONFIG_ASHMEM=y
