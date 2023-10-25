@@ -10,7 +10,9 @@ define KernelPackage/android
   KCONFIG:=CONFIG_ANDROID=y \
 	   CONFIG_ANDROID_BINDERFS=y \
 	   CONFIG_ANDROID_BINDER_IPC=y \
-	   CONFIG_ASHMEM=y
+	   CONFIG_ASHMEM=y \
+	   CONFIG_ANDROID_BINDER_IPC_SELFTEST=n \
+	   CONFIG_ANDROID_BINDER_DEVICES="binder,hwbinder,vndbinder"
   FILES:= \
     $(LINUX_DIR)/drivers/android/binderfs.ko \
     $(LINUX_DIR)/drivers/staging/android/ashmem.ko
