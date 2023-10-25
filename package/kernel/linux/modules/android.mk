@@ -10,17 +10,17 @@ define KernelPackage/android
   KCONFIG:=CONFIG_ANDROID=y \
 	   CONFIG_ANDROID_BINDERFS=y \
 	   CONFIG_ANDROID_BINDER_IPC=y \
-	   CONFIG_ASHMEM=y \
 	   CONFIG_ANDROID_BINDER_IPC_SELFTEST=n \
-	   CONFIG_ANDROID_BINDER_DEVICES="binder,hwbinder,vndbinder"
+	   CONFIG_ANDROID_BINDER_DEVICES="binder,hwbinder,vndbinder" \
+	   CONFIG_ASHMEM=y
   FILES:= \
-    $(LINUX_DIR)/drivers/android/binderfs.ko \
+    $(LINUX_DIR)/drivers/android/binder.ko \
     $(LINUX_DIR)/drivers/staging/android/ashmem.ko
-  AUTOLOAD:=$(call AutoLoad,30,binderfs,ashmem)
+  AUTOLOAD:=$(call AutoLoad,30,binder,ashmem,1)
 endef
 
 define KernelPackage/android/description
- Kernel module for android(binderfs,ashmem)
+ Kernel module for android(binder,ashmem)
 endef
 
 
